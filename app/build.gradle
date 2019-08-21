@@ -14,7 +14,8 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "CURRENCY_RATES_URL", '"https://api.exchangeratesapi.io/latest"'
+        buildConfigField "String", "BASE_URL", '"https://api.exchangeratesapi.io/"'
+        buildConfigField "String", "LATEST", '"latest"'
     }
     buildTypes {
         release {

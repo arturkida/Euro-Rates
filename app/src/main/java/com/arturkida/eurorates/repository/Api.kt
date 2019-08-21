@@ -6,6 +6,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface Api {
-    @GET(BuildConfig.CURRENCY_RATES_URL)
+    @GET(BuildConfig.LATEST)
     fun getCurrencyRates() : Call<Currency>
 }
