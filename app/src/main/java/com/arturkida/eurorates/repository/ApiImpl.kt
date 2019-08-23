@@ -2,6 +2,7 @@ package com.arturkida.eurorates.repository
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
+import android.util.Log
 import com.arturkida.eurorates.BuildConfig
 import com.arturkida.eurorates.model.Currency
 import retrofit2.Call
@@ -27,7 +28,7 @@ class ApiImpl {
 
         call.enqueue(object : Callback<Currency?> {
             override fun onFailure(call: Call<Currency?>, t: Throwable) {
-                // TODO create Resource to handle failure
+                Log.i("currency", "deu ruim")
             }
 
             override fun onResponse(call: Call<Currency?>, response: Response<Currency?>) {
