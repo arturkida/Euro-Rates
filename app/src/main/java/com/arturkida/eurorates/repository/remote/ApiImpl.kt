@@ -1,8 +1,7 @@
 package com.arturkida.eurorates.repository.remote
 
-import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
-import android.util.Log
+import android.os.Handler
 import com.arturkida.eurorates.BuildConfig
 import com.arturkida.eurorates.idlingresource.EspressoIdlingResource
 import com.arturkida.eurorates.model.Currency
@@ -26,6 +25,22 @@ class ApiImpl {
 
         EspressoIdlingResource.increment()
 
+        val handler = Handler()
+        val defaultDelay = 60000L
+        val doNotWaitToRun = 0L
+
+        handler.postDelayed(object : Runnable {
+            override fun run() {
+                callApi()
+
+                handler.postDelayed(this, defaultDelay)
+            }
+        }, doNotWaitToRun)
+
+        return currency
+    }
+
+    private fun callApi() {
         val call = retrofit.getCurrencyRates()
 
         call.enqueue(object : Callback<Currency?> {
@@ -39,7 +54,5 @@ class ApiImpl {
                 EspressoIdlingResource.decrement()
             }
         })
-
-        return currency
     }
 }

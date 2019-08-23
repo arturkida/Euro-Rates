@@ -18,7 +18,7 @@ class CurrencyActivityTest {
     @get:Rule
     val rule = ActivityTestRule<CurrencyActivity>(CurrencyActivity::class.java)
 
-    fun robot(func: CurrencyRobot.() -> Unit) =
+    private fun robot(func: CurrencyRobot.() -> Unit) =
         CurrencyRobot().apply {
             func()
         }
@@ -34,28 +34,28 @@ class CurrencyActivityTest {
     }
 
     @Test
-    fun onHomeScren_CheckUsdCurrencyTitleIsDisplayed() {
+    fun onHomeScreen_CheckUsdCurrencyTitleIsDisplayed() {
         robot {
             checkUsdCurrencyTitle(R.id.tv_usd_title)
         }
     }
 
     @Test
-    fun onHomeScren_CheckPlnCurrencyTitleIsDisplayed() {
+    fun onHomeScreen_CheckPlnCurrencyTitleIsDisplayed() {
         robot {
             checkPlnCurrencyTitle(R.id.tv_pln_title)
         }
     }
 
     @Test
-    fun onHomeScren_CheckUsdCurrencyValueIsDisplayed() {
+    fun onHomeScreen_CheckUsdCurrencyValueIsDisplayed() {
         robot {
             checkUsdCurrencyValue(R.id.tv_usd_value)
         }
     }
 
     @Test
-    fun onHomeScren_CheckPlnCurrencyValueIsDisplayed() {
+    fun onHomeScreen_CheckPlnCurrencyValueIsDisplayed() {
         robot {
             checkPlnCurrencyValue(R.id.tv_pln_value)
         }

@@ -1,13 +1,14 @@
 package com.arturkida.eurorates.ui
 
 import android.arch.lifecycle.Observer
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import com.arturkida.eurorates.R
 import com.arturkida.eurorates.viewmodel.CurrencyViewModel
 import kotlinx.android.synthetic.main.activity_currency.*
 import org.koin.android.viewmodel.ext.android.viewModel
+
 
 class CurrencyActivity : AppCompatActivity() {
 
