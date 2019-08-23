@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Euro Rates</string>
+    <string name="errorMessage">Error trying to get currencies</string>
 </resources>

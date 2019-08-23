@@ -1,4 +1,4 @@
-package com.arturkida.eurorates.repository
+package com.arturkida.eurorates.repository.remote
 
 import com.arturkida.eurorates.BuildConfig
 import com.arturkida.eurorates.model.Currency
