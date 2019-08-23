@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.arturkida.eurorates.R
 import com.arturkida.eurorates.viewmodel.CurrencyViewModel
+import kotlinx.android.synthetic.main.activity_currency.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class CurrencyActivity : AppCompatActivity() {
@@ -19,10 +20,11 @@ class CurrencyActivity : AppCompatActivity() {
         getCurrencies()
     }
 
-    fun getCurrencies() {
+    private fun getCurrencies() {
         viewModel.getCurrencies().observe(this, Observer {currencies ->
-            currencies?.data?.let {
-
+            currencies?.data?.let {currency ->
+                tv_usd_value.text = currency.rates.USD.toString()
+                tv_pln_value.text = currency.rates.PLN.toString()
             }
             currencies?.error?.let {
                 showErrorMessage()
