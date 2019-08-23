@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Euro Rates</string>
     <string name="errorMessage">Error trying to get currencies</string>
+    <string name="usd">USD</string>
+    <string name="pln">PLN</string>
 </resources>

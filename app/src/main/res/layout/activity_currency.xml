@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.CurrencyActivity">
+
+    <LinearLayout
+            android:id="@+id/container_usd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/container_pln">
+
+        <TextView
+                android:id="@+id/tv_usd_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/usd"
+                android:textSize="@dimen/currency_name_size"/>
+
+        <TextView
+                android:id="@+id/tv_usd_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pln"
+                android:textSize="@dimen/currency_value"
+                android:layout_gravity="center"
+                tools:text="1.43"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/container_pln"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/container_usd"
+            app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+                android:id="@+id/tv_pln_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pln"
+                android:textSize="@dimen/currency_name_size" />
+
+        <TextView
+                android:id="@+id/tv_pln_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/currency_value"
+                android:layout_gravity="center"
+                tools:text="4.12"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
